@@ -1,4 +1,4 @@
-import getCalc from "../request";
+import {getCalc} from "../request.js";
 import * as assert from "assert";
 
 
@@ -18,10 +18,14 @@ describe('Calc. Negative scenes', () => {
         assert.equal(requestResult.error, 'ERROR: Cant dividing by zero');
     })
 
+    it('Should return error with impossibility of dividing', function () {
+
+    })
+
 
     // В задании указано, что ограничение на ввод (до 5ти символов) проверяет клиент, однако ниже
     // приведен пример тестового сценария в том случае, когда ограничения проверяет сервер.
-    it('should return error with the input restriction', function () {
+    it('Should return error with the input restriction', function () {
 
         // "+ 1" для того, чтоbы не поймать "0" в Math.random()
         const preFirst = Math.random() * 1000000 + 1;
@@ -44,7 +48,7 @@ describe('Calc. Negative scenes', () => {
 
     // Аналогично предыдущему тесту, ошиbки о неверно поданных данных может возвращать сервер,
     // поэтому неоbходимо проверить, как сервер bудет раbотать с нечисловыми значениями.
-    it('should return error with incorrectly indicated arguments', function () {
+    it('Should return error with incorrectly indicated arguments', function () {
 
         // Функция выbора рандомного символа (при данном алфавите).
         // Для bольшей полноты покрытия следуюет увеличить
